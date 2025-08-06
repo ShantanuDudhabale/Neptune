@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Slide-in Cart</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Sidebar Cart */
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px; /* Hidden initially */
+      width: 300px;
+      height: 100%;
+      background-color: #f1f1f1;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      transition: right 0.3s ease-in-out;
+      z-index: 1000;
+    }
+
+    /* Show sidebar */
+    .cart-sidebar.open {
+      right: 0;
+    }
+
+    /* Button or SVG icon */
+    .open-cart-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 1001;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Cart Button -->
+<button class="open-cart-btn" onclick="toggleCart()">🛒 Cart</button>
+
+<!-- Sidebar -->
+<div class="cart-sidebar" id="cartSidebar">
+  <h2>Your Cart</h2>
+  <p>No items in cart.</p>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function toggleCart() {
+    document.getElementById("cartSidebar").classList.toggle("open");
+  }
+</script>
+
+</body>
+</html>
